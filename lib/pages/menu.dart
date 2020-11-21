@@ -1,6 +1,8 @@
 import 'package:uaiCup/colors/uaiColors.dart';
 import 'package:uaiCup/pages/analysis.dart';
 import 'package:flutter/material.dart';
+import 'package:uaiCup/pages/history.dart';
+import 'package:uaiCup/pages/info.dart';
 import 'package:uaiCup/widgets/iconbox.dart';
 import 'package:uaiCup/icons/uaiCons.dart';
 import '../widgets/iconbox.dart';
@@ -119,19 +121,16 @@ class _MonitorState extends State<Monitor> {
                                   flex: 1,
                                   // Bluetooth widget
                                   child: GestureDetector(
-                                    onTap: () {
-                                      final snackBar = SnackBar(
-                                        content: Text(
-                                          "Falta implementar!",
-                                          style: TextStyle(
-                                              color: UaiColors.white,
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.normal,
-                                              fontFamily: 'Fredoka'),
-                                        ),
-                                      );
-                                      Scaffold.of(context)
-                                          .showSnackBar(snackBar);
+                                    onTap: () => {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (ctxt) => History(
+                                                  backgroundColor:
+                                                      UaiColors.white,
+                                                  widgetsBorder: 10,
+                                                )),
+                                      )
                                     },
                                     child: VerticalIconBox(
                                       text: "Histórico",
@@ -156,20 +155,18 @@ class _MonitorState extends State<Monitor> {
                                   flex: 1,
                                   // Temperature widget
                                   child: GestureDetector(
-                                      onTap: () {
-                                        final snackBar = SnackBar(
-                                          content: Text(
-                                            "Falta implementar!",
-                                            style: TextStyle(
-                                                color: UaiColors.white,
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.normal,
-                                                fontFamily: 'Fredoka'),
-                                          ),
-                                        );
-                                        Scaffold.of(context)
-                                            .showSnackBar(snackBar);
-                                      },
+                                      onTap: () => {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (ctxt) =>
+                                                      Information(
+                                                        backgroundColor:
+                                                            UaiColors.blue2,
+                                                        widgetsBorder: 10,
+                                                      )),
+                                            )
+                                          },
                                       child: VerticalIconBox(
                                         text: "Informações",
                                         icon: Icon(

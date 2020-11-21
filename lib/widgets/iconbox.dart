@@ -51,6 +51,66 @@ class VerticalIconBox extends StatelessWidget {
   }
 }
 
+class VerticalDoubleTextBox extends StatelessWidget {
+  final EdgeInsetsGeometry padding;
+  final Color backgroundColor;
+  final double borderRadius;
+  final String text;
+  final String secondText;
+  final double iconTextPadding;
+  final Color textColor;
+  final double textSize;
+  final double secondTextSize;
+
+  VerticalDoubleTextBox(
+      {@required this.padding,
+      @required this.backgroundColor,
+      @required this.borderRadius,
+      @required this.text,
+      @required this.secondText,
+      @required this.iconTextPadding,
+      @required this.textColor,
+      @required this.textSize,
+      @required this.secondTextSize});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: padding, // bottom
+        child: Container(
+            decoration: BoxDecoration(
+              // Box color and border radius
+              color: backgroundColor,
+              borderRadius: BorderRadius.circular(borderRadius),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              // Box content
+              children: <Widget>[
+                Text(
+                  secondText,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: textColor,
+                    fontSize: secondTextSize,
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: iconTextPadding),
+                ),
+                Text(
+                  text,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: textColor,
+                    fontSize: textSize,
+                  ),
+                ),
+              ],
+            )));
+  }
+}
+
 class HorizontalIconBox extends StatelessWidget {
   final EdgeInsetsGeometry padding;
   final Color backgroundColor;

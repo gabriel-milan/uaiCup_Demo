@@ -1,14 +1,13 @@
 import 'package:uaiCup/colors/uaiColors.dart';
 import 'package:uaiCup/icons/uaiCons.dart';
 import 'package:flutter/material.dart';
-import 'package:uaiCup/pages/report.dart';
 import 'package:uaiCup/widgets/iconbox.dart';
 
-class Analysis extends StatelessWidget {
+class Report extends StatelessWidget {
   final Color backgroundColor;
   final double widgetsBorder;
 
-  Analysis({@required this.backgroundColor, @required this.widgetsBorder});
+  Report({@required this.backgroundColor, @required this.widgetsBorder});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class Analysis extends StatelessWidget {
         appBar: new AppBar(
           backgroundColor: UaiColors.blue2,
           title: new Text(
-            "Análise",
+            "Relatório",
             style: TextStyle(
                 color: UaiColors.white,
                 fontSize: 30,
@@ -54,15 +53,15 @@ class Analysis extends StatelessWidget {
                                     child: GestureDetector(
                                       onTap: () => {},
                                       child: VerticalIconBox(
-                                        text: "Caneca\nconectada!",
+                                        text: "Sem\nantibióticos!",
                                         icon: Icon(
                                           UaiCons.milk,
-                                          size: 50,
+                                          size: 0,
                                           color: Colors.white,
                                         ),
                                         borderRadius: 20,
                                         iconTextPadding: 20,
-                                        backgroundColor: UaiColors.blue2,
+                                        backgroundColor: Colors.green,
                                         padding: EdgeInsets.fromLTRB(
                                             widgetsBorder, // left
                                             widgetsBorder, // top
@@ -76,10 +75,64 @@ class Analysis extends StatelessWidget {
                                     flex: 1,
                                     // Heating widget
                                     child: GestureDetector(
+                                      onTap: () => {},
+                                      child: VerticalDoubleTextBox(
+                                        backgroundColor: UaiColors.blue2,
+                                        borderRadius: 20,
+                                        iconTextPadding: 15,
+                                        padding: EdgeInsets.fromLTRB(
+                                            widgetsBorder / 2, // left
+                                            widgetsBorder, // top
+                                            widgetsBorder, // right
+                                            widgetsBorder / 2),
+                                        text: "gordura",
+                                        textColor: Colors.white,
+                                        textSize: 25,
+                                        secondText: "3,8%",
+                                        secondTextSize: 50,
+                                      ),
+                                    )),
+                              ],
+                            ),
+                          ),
+                        ),
+                        // Second vertical portion of the screen
+                        Expanded(
+                          flex: 3,
+                          child: Container(
+                            // Adding widgets horizontally
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Expanded(
+                                    flex: 1,
+                                    // Bluetooth widget
+                                    child: GestureDetector(
+                                      onTap: () => {},
+                                      child: VerticalDoubleTextBox(
+                                        backgroundColor: UaiColors.blue2,
+                                        borderRadius: 20,
+                                        iconTextPadding: 15,
+                                        padding: EdgeInsets.fromLTRB(
+                                            widgetsBorder / 2, // left
+                                            widgetsBorder, // top
+                                            widgetsBorder, // right
+                                            widgetsBorder / 2),
+                                        text: "lactose",
+                                        textColor: Colors.white,
+                                        textSize: 25,
+                                        secondText: "4,6%",
+                                        secondTextSize: 50,
+                                      ),
+                                    )),
+                                Expanded(
+                                    flex: 1,
+                                    // Heating widget
+                                    child: GestureDetector(
                                       onTap: () {
                                         final snackBar = SnackBar(
                                           content: Text(
-                                            "Menu de configurações desabilitado para demonstração!",
+                                            "Análise detalhada desabilitada para demonstração!",
                                             style: TextStyle(
                                                 color: UaiColors.white,
                                                 fontSize: 20,
@@ -91,10 +144,10 @@ class Analysis extends StatelessWidget {
                                             .showSnackBar(snackBar);
                                       },
                                       child: VerticalIconBox(
-                                        backgroundColor: UaiColors.yellow2,
+                                        backgroundColor: UaiColors.black,
                                         borderRadius: 20,
                                         icon: Icon(
-                                          UaiCons.settings,
+                                          UaiCons.info,
                                           size: 50,
                                           color: Colors.white,
                                         ),
@@ -104,7 +157,7 @@ class Analysis extends StatelessWidget {
                                             widgetsBorder, // top
                                             widgetsBorder, // right
                                             widgetsBorder / 2),
-                                        text: "Configurar\nanálise",
+                                        text: "Análise\ndetalhada",
                                         textColor: Colors.white,
                                         textSize: 25,
                                       ),
@@ -112,45 +165,6 @@ class Analysis extends StatelessWidget {
                               ],
                             ),
                           ),
-                        ),
-                        // Second vertical portion of the screen
-                        Expanded(
-                          flex: 3,
-                          child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Expanded(
-                                    child: GestureDetector(
-                                        onTap: () => {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (ctxt) => Report(
-                                                          backgroundColor:
-                                                              UaiColors.white,
-                                                          widgetsBorder: 10,
-                                                        )),
-                                              )
-                                            },
-                                        child: HorizontalIconBox(
-                                          backgroundColor: UaiColors.black,
-                                          padding: EdgeInsets.fromLTRB(
-                                              widgetsBorder / 2, // lefst
-                                              widgetsBorder / 2, // top
-                                              widgetsBorder, // right
-                                              widgetsBorder / 2),
-                                          borderRadius: 20,
-                                          icon: Icon(
-                                            UaiCons.cow,
-                                            size: 0,
-                                            color: Colors.white,
-                                          ),
-                                          text: "Iniciar\nanálise",
-                                          textColor: Colors.white,
-                                          textSize: 40,
-                                          iconTextPadding: 0,
-                                        )))
-                              ]),
                         ),
 
                         Expanded(

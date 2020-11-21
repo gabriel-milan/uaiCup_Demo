@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:uaiCup/pages/report.dart';
 import 'package:uaiCup/widgets/iconbox.dart';
 
-class Analysis extends StatelessWidget {
+class History extends StatelessWidget {
   final Color backgroundColor;
   final double widgetsBorder;
 
-  Analysis({@required this.backgroundColor, @required this.widgetsBorder});
+  History({@required this.backgroundColor, @required this.widgetsBorder});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class Analysis extends StatelessWidget {
         appBar: new AppBar(
           backgroundColor: UaiColors.blue2,
           title: new Text(
-            "Análise",
+            "Histórico",
             style: TextStyle(
                 color: UaiColors.white,
                 fontSize: 30,
@@ -37,12 +37,12 @@ class Analysis extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         Expanded(
-                          flex: 2,
+                          flex: 1,
                           child: Container(),
                         ),
-                        // First vertical portion of the screen
+                        // Vertical portion of the screen
                         Expanded(
-                          flex: 3,
+                          flex: 1,
                           child: Container(
                             // Adding widgets horizontally
                             child: Row(
@@ -52,9 +52,20 @@ class Analysis extends StatelessWidget {
                                     flex: 1,
                                     // Bluetooth widget
                                     child: GestureDetector(
-                                      onTap: () => {},
-                                      child: VerticalIconBox(
-                                        text: "Caneca\nconectada!",
+                                      onTap: () => {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (ctxt) => Report(
+                                                    backgroundColor:
+                                                        UaiColors.white,
+                                                    widgetsBorder: 10,
+                                                  )),
+                                        )
+                                      },
+                                      child: HorizontalIconBox(
+                                        text:
+                                            "19/nov/2020 08:53:49\nBrinco 123",
                                         icon: Icon(
                                           UaiCons.milk,
                                           size: 50,
@@ -72,14 +83,26 @@ class Analysis extends StatelessWidget {
                                         textSize: 25,
                                       ),
                                     )),
+                              ],
+                            ),
+                          ),
+                        ),
+                        // Vertical portion of the screen
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            // Adding widgets horizontally
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
                                 Expanded(
                                     flex: 1,
-                                    // Heating widget
+                                    // Bluetooth widget
                                     child: GestureDetector(
                                       onTap: () {
                                         final snackBar = SnackBar(
                                           content: Text(
-                                            "Menu de configurações desabilitado para demonstração!",
+                                            "Desabilitado para demonstração!",
                                             style: TextStyle(
                                                 color: UaiColors.white,
                                                 fontSize: 20,
@@ -90,21 +113,22 @@ class Analysis extends StatelessWidget {
                                         Scaffold.of(context)
                                             .showSnackBar(snackBar);
                                       },
-                                      child: VerticalIconBox(
-                                        backgroundColor: UaiColors.yellow2,
-                                        borderRadius: 20,
+                                      child: HorizontalIconBox(
+                                        text:
+                                            "19/nov/2020 08:24:56\nBrinco 122",
                                         icon: Icon(
-                                          UaiCons.settings,
+                                          UaiCons.milk,
                                           size: 50,
                                           color: Colors.white,
                                         ),
-                                        iconTextPadding: 15,
+                                        borderRadius: 20,
+                                        iconTextPadding: 20,
+                                        backgroundColor: UaiColors.blue2,
                                         padding: EdgeInsets.fromLTRB(
-                                            widgetsBorder / 2, // left
+                                            widgetsBorder, // left
                                             widgetsBorder, // top
-                                            widgetsBorder, // right
+                                            widgetsBorder / 2, // right
                                             widgetsBorder / 2),
-                                        text: "Configurar\nanálise",
                                         textColor: Colors.white,
                                         textSize: 25,
                                       ),
@@ -113,48 +137,58 @@ class Analysis extends StatelessWidget {
                             ),
                           ),
                         ),
-                        // Second vertical portion of the screen
+                        // Vertical portion of the screen
                         Expanded(
-                          flex: 3,
-                          child: Column(
+                          flex: 1,
+                          child: Container(
+                            // Adding widgets horizontally
+                            child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Expanded(
+                                    flex: 1,
+                                    // Bluetooth widget
                                     child: GestureDetector(
-                                        onTap: () => {
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (ctxt) => Report(
-                                                          backgroundColor:
-                                                              UaiColors.white,
-                                                          widgetsBorder: 10,
-                                                        )),
-                                              )
-                                            },
-                                        child: HorizontalIconBox(
-                                          backgroundColor: UaiColors.black,
-                                          padding: EdgeInsets.fromLTRB(
-                                              widgetsBorder / 2, // lefst
-                                              widgetsBorder / 2, // top
-                                              widgetsBorder, // right
-                                              widgetsBorder / 2),
-                                          borderRadius: 20,
-                                          icon: Icon(
-                                            UaiCons.cow,
-                                            size: 0,
-                                            color: Colors.white,
+                                      onTap: () {
+                                        final snackBar = SnackBar(
+                                          content: Text(
+                                            "Desabilitado para demonstração!",
+                                            style: TextStyle(
+                                                color: UaiColors.white,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.normal,
+                                                fontFamily: 'Fredoka'),
                                           ),
-                                          text: "Iniciar\nanálise",
-                                          textColor: Colors.white,
-                                          textSize: 40,
-                                          iconTextPadding: 0,
-                                        )))
-                              ]),
+                                        );
+                                        Scaffold.of(context)
+                                            .showSnackBar(snackBar);
+                                      },
+                                      child: HorizontalIconBox(
+                                        text:
+                                            "19/nov/2020 07:49:13\nBrinco 121",
+                                        icon: Icon(
+                                          UaiCons.milk,
+                                          size: 50,
+                                          color: Colors.white,
+                                        ),
+                                        borderRadius: 20,
+                                        iconTextPadding: 20,
+                                        backgroundColor: UaiColors.blue2,
+                                        padding: EdgeInsets.fromLTRB(
+                                            widgetsBorder, // left
+                                            widgetsBorder, // top
+                                            widgetsBorder / 2, // right
+                                            widgetsBorder / 2),
+                                        textColor: Colors.white,
+                                        textSize: 25,
+                                      ),
+                                    )),
+                              ],
+                            ),
+                          ),
                         ),
-
                         Expanded(
-                          flex: 2,
+                          flex: 1,
                           child: Container(),
                         ),
                       ],
