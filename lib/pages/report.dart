@@ -53,7 +53,7 @@ class Report extends StatelessWidget {
                                     child: GestureDetector(
                                       onTap: () => {},
                                       child: VerticalIconBox(
-                                        text: "Sem\nantibióticos!",
+                                        text: "Antibióticos não\n detectados!",
                                         icon: Icon(
                                           UaiCons.milk,
                                           size: 0,
