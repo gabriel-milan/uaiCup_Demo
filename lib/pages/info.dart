@@ -89,7 +89,12 @@ class Information extends StatelessWidget {
                                       color: Colors.white,
                                       fontSize: 18,
                                       fontWeight: FontWeight.normal)),
-                              Text("ou acesse nosso website:",
+                              Text("pelo email:",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.normal)),
+                              Text("uaicup@cos.ufrj.br",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18,
@@ -97,12 +102,12 @@ class Information extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.only(top: 15),
                               ),
-                              Text("uaicup.labnet.nce.ufrj.br",
+                              Text("Ou acesse nosso website:",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18,
                                       fontWeight: FontWeight.normal)),
-                              Text("uaicup@cos.ufrj.br",
+                              Text("uaicup.labnet.nce.ufrj.br ",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18,
